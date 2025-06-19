@@ -1,0 +1,692 @@
+U-Boot 2014.01-v1.2 (Feb 08 2021 - 11:11:23)
+
+Board: IPCAM RTS3903 CPU: 500M :rx5281 prid=0xdc02
+force spi nor mode
+DRAM:  64 MiB @ 800 MHz
+Skipping flash_init
+Flash: 0 Bytes
+flash status is 0, 2, 0
+SF: Detected W25Q128FV with page size 256 Bytes, erase size 64 KiB, total 16 MiB
+Using default environment
+
+In:    serial
+Out:   serial
+Err:   serial
+MMC:   rtsmmc: 0
+reading jsw_recovery.bin
+** Unable to read file jsw_recovery.bin **
+Net:   Realtek PCIe GBE Family Controller mcfg = 0024
+set ethaddr = 00:00:00:00:00:00
+r8168#0
+Hit any key to stop autoboot:  0
+## Booting kernel from Legacy Image at bc0a0000 ...
+get header OKimage_get_kernel check hcrc
+image_get_kernel print contents
+   Image Name:   linux_3.10
+   Created:      2021-03-02   7:03:27 UTC
+   Image Type:   MIPS Linux Kernel Image (uncompressed)
+   Data Size:    1946363 Bytes = 1.9 MiB
+   Load Address: 805afa80
+   Entry Point:  805afa80
+   Verifying Checksum ... OK
+   Loading Kernel Image ... OK
+
+Starting kernel ...
+
+Linux version 3.10.27 (develop@develop) (gcc version 4.8.5 20150209 (prerelease) (Realtek RSDK-4.8.5p1 Build 2521) ) #99 PREEMPT Tue Mar 2 15:02:37 CST 2021
+prom cpufreq = 500000000
+prom memsize = 67108864
+hw_ver: 0x2, hw_rev: 0x1, isp_ver: 0x1
+prom eth mac = 00:00:00:00:00:00
+bootconsole [early0] enabled
+CPU revision is: 0000dc02
+FPU revision is: 01730001
+Determined physical RAM map:
+ memory: 04000000 @ 00000000 (usable)
+Reserved contiguous memory at 0x5c4000(0x1700000)
+Zone ranges:
+  Normal   [mem 0x00000000-0x03ffffff]
+Movable zone start for each node
+Early memory node ranges
+  node   0: [mem 0x00000000-0x03ffffff]
+icache: 32kB/32B, dcache: 16kB/32B, scache: 0kB/0B
+Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 16256
+Kernel command line: console=ttyS1,57600 root=/dev/mtdblock4 rts_hconf.hconf_mtd_idx=2 rts-quadspi.channels=dual mtdparts=m25p80:16384k@0(global),384k@0k(boot),256k@384k(hconf),3072k@640k(k)
+PID hash table entries: 256 (order: -2, 1024 bytes)
+Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+Memory: 35476k/65536k available (4588k kernel code, 30060k reserved, 1018k data, 152k init, 0k highmem)
+SLUB: HWalign=32, Order=0-3, MinObjects=0, CPUs=1, Nodes=1
+Preemptible hierarchical RCU implementation.
+NR_IRQS:57
+Calibrating delay loop... 497.66 BogoMIPS (lpj=995328)
+pid_max: default: 32768 minimum: 301
+Mount-cache hash table entries: 512
+pinctrl core: initialized pinctrl subsystem
+regulator-dummy: no parameters
+NET: Registered protocol family 16
+Init force reset registers
+rtsxb2 registered with IRQs
+INFO: initializing ISP memory ...
+INFO: initializing ISP device ...
+ISP camera platform devices added
+INFO: initializing SD controller ...
+INFO: initializing snd device ...
+snd resvd mem size : 1048576
+INFO: initializing USB host ...
+INFO: initializing spi host ...0
+spi platform id is ffffffff
+INFO: initializing I2C master ...
+INFO: initializing DMA controller ...
+INFO: initializing pinctrl device ...
+pinctrl_platform rts3903-pinctrl: rtspc registered with IRQs
+INFO: initializing ethernet devices ...
+INFO: initializing dwc_otg devices ...
+INFO: initializing USB phy ...
+INFO: initializing watchdog controller ...
+INFO: initializing pmu device ...
+INFO: initializing cpu dvfs device ...
+bio: create slab <bio-0> at 0
+rts_dmac rts3903-dmac: DesignWare DMA Controller, 4 channels
+INFO: realtek DMA engine inited
+SCSI subsystem initialized
+usbcore: registered new interface driver usbfs
+usbcore: registered new interface driver hub
+usbcore: registered new device driver usb
+usbphy-platform usbphy-platform: Initialized Realtek IPCam USB Phy module
+Linux video capture interface: v2.00
+Advanced Linux Sound Architecture Driver Initialized.
+Bluetooth: Core ver 2.21
+NET: Registered protocol family 31
+Bluetooth: HCI device and connection manager initialized
+Bluetooth: HCI socket layer initialized
+Bluetooth: L2CAP socket layer initialized
+Bluetooth: SCO socket layer initialized
+NET: Registered protocol family 2
+cfg80211: Calling CRDA to update world regulatory domain
+TCP established hash table entries: 512 (order: 0, 4096 bytes)
+TCP bind hash table entries: 512 (order: -1, 2048 bytes)
+TCP: Hash tables configured (established 512 bind 512)
+TCP: reno registered
+UDP hash table entries: 256 (order: 0, 4096 bytes)
+UDP-Lite hash table entries: 256 (order: 0, 4096 bytes)
+NET: Registered protocol family 1
+RPC: Registered named UNIX socket transport module.
+RPC: Registered udp transport module.
+RPC: Registered tcp transport module.
+RPC: Registered tcp NFSv4.1 backchannel transport module.
+squashfs: version 4.0 (2009/01/31) Phillip Lougher
+NFS: Registering the id_resolver key type
+Key type id_resolver registered
+Key type id_legacy registered
+jffs2: version 2.2. (NAND) © 2001-2006 Red Hat, Inc.
+msgmni has been set to 69
+Block layer SCSI generic (bsg) driver version 0.4 loaded (major 253)
+io scheduler noop registered
+io scheduler deadline registered
+io scheduler cfq registered (default)
+Serial: 8250/16550 driver, 3 ports, IRQ sharing disabled
+serial8250: ttyS0 at MMIO 0x18810000 (irq = 6) is a 16550A
+console [ttyS1] enabled, bootconsole disabled
+console [ttyS1] enabled, bootconsole disabled
+serial8250: ttyS1 at MMIO 0x18810100 (irq = 6) is a 16550A
+serial8250: ttyS2 at MMIO 0x18810200 (irq = 6) is a 16550A
+dbg_iomem initialized!
+rts-quadspi rts3903-qspi: force to set channels from quad mode to dual mode
+rts-quadspi rts3903-qspi: request 60000000 Hz, force to set 41666666 Hz
+rts-quadspi rts3903-qspi: found w25q128fv, expected mx25l12835f
+rts-quadspi rts3903-qspi: w25q128fv (16384 Kbytes)
+7 cmdlinepart partitions found on MTD device m25p80
+Creating 7 MTD partitions on "m25p80":
+0x000000000000-0x000001000000 : "global"
+0x000000000000-0x000000060000 : "boot"
+0x000000060000-0x0000000a0000 : "hconf"
+0x0000000a0000-0x0000003a0000 : "kernel"
+0x0000003a0000-0x000000ea0000 : "rootfs"
+0x000000ea0000-0x000000fa0000 : "mtd"
+0x000000fa0000-0x000001000000 : "mtd5"
+rts-quadspi rts3903-qspi: Realtek QSPI Controller at 0x18030000 (irq 5)
+rtl8168 Gigabit Ethernet driver 8.038.00-NAPI loaded
+rtl8168 rts3903-r8168 (unregistered net_device): Get invalid MAC address from flash!
+eth%d: 0xb8400000, 00:00:00:00:00:00, IRQ 10
+ehci_hcd: USB 2.0 'Enhanced' Host Controller (EHCI) Driver
+ehci-rts: ehci-rts platform driver
+ehci-platform ehci-platform: EHCI Host Controller
+ehci-platform ehci-platform: new USB bus registered, assigned bus number 1
+ehci-platform ehci-platform: irq 11, io mem 0x18100000
+ehci-platform ehci-platform: USB 2.0 started, EHCI 1.00
+usb usb1: New USB device found, idVendor=1d6b, idProduct=0002
+usb usb1: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb1: Product: EHCI Host Controller
+usb usb1: Manufacturer: Linux 3.10.27 ehci_hcd
+usb usb1: SerialNumber: ehci-platform
+hub 1-0:1.0: USB hub found
+hub 1-0:1.0: 1 port detected
+ohci_hcd: USB 1.1 'Open' Host Controller (OHCI) Driver
+ohci-platform ohci-platform: Generic Platform OHCI Controller
+ohci-platform ohci-platform: new USB bus registered, assigned bus number 2
+ohci-platform ohci-platform: irq 11, io mem 0x18180000
+usb usb2: New USB device found, idVendor=1d6b, idProduct=0001
+usb usb2: New USB device strings: Mfr=3, Product=2, SerialNumber=1
+usb usb2: Product: Generic Platform OHCI Controller
+usb usb2: Manufacturer: Linux 3.10.27 ohci_hcd
+usb usb2: SerialNumber: ohci-platform
+hub 2-0:1.0: USB hub found
+hub 2-0:1.0: 1 port detected
+dwc_otg: version 3.10b 20-MAY-2013
+Core Release: 3.10a
+Setting default values for core params
+WARN::dwc_otg_set_param_dev_tx_fifo_size:6354: Value is larger then power-on FIFO size
+
+WARN::dwc_otg_set_param_dev_tx_fifo_size:6354: Value is larger then power-on FIFO size
+
+Using Buffer DMA mode
+Periodic Transfer Interrupt Enhancement - disabled
+Multiprocessor Interrupt Enhancement - disabled
+OTG VER PARAM: 0, OTG VER FLAG: 0
+Shared Tx FIFO mode
+usbcore: registered new interface driver usb-storage
+g_serial gadget: Gadget Serial v2.4
+g_serial gadget: g_serial ready
+usb device pull 1
+i2c /dev entries driver
+ERROR: Unable to read RTP_REG_DC4_TRIM_OFFSET reg
+ERROR: Unable to read RTP_REG_CHIP_VERSION reg
+rtp_mfd 0-0030: pre_init() failed: -140
+rtp_mfd: probe of 0-0030 failed with error -140
+Stopped watchdog timer
+timer margin: 8 sec
+nf_conntrack version 0.5.0 (554 buckets, 2216 max)
+ip_tables: (C) 2000-2006 Netfilter Core Team
+TCP: cubic registered
+NET: Registered protocol family 17
+Key type dns_resolver registered
+hconf type 3, size 0x40000, ebsize 0x10000
+hconf_init hconf init success
+usb 1-1: new high-speed USB device number 2 using ehci-platform
+ALSA device list:
+  No soundcards found.
+VFS: Mounted root (squashfs filesystem) readonly on device 31:4.
+Freeing unused kernel memory: 152K (8058a000 - 805b0000)
+usb 1-1: New USB device found, idVendor=05e3, idProduct=0608
+usb 1-1: New USB device strings: Mfr=0, Product=1, SerialNumber=0
+usb 1-1: Product: USB2.0 Hub
+hub 1-1:1.0: USB hub found
+hub 1-1:1.0: 4 ports detected
+mounting proc ...
+usb 1-1.2: new high-speed USB device number 3 using ehci-platform
+usb 1-1.2: New USB device found, idVendor=0bda, idProduct=c820
+usb 1-1.2: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 1-1.2: Product: 802.11ac NIC
+usb 1-1.2: Manufacturer: Realtek
+usb 1-1.2: SerialNumber: 123456
+mounting mtd and mtd5 ...
+jffs2: notice: (275) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+jffs2: notice: (282) jffs2_build_xattr_subsystem: complete building xattr subsystem, 0 of xdatum (0 unchecked, 0 orphan) and 0 of xref (0 dead, 0 orphan) found.
+Has JFFS2 on /dev/mtdblock5
+usb 1-1.4: new high-speed USB device number 4 using ehci-platform
+usb 1-1.4: New USB device found, idVendor=3231, idProduct=0100
+usb 1-1.4: New USB device strings: Mfr=1, Product=2, SerialNumber=3
+usb 1-1.4: Product: Kneron KL520
+usb 1-1.4: Manufacturer: Kneron
+usb 1-1.4: SerialNumber: A31C2524
+mmc0: new SDHC card at address 0001
+mmcblk0: mmc0:0001 SD32G 29.1 GiB
+ mmcblk0: p1
+FAT-fs (mmcblk0p1): Volume was not properly unmounted. Some data may be corrupt. Please run fsck.
+sdcard ready at 1
+cms starting ...
+cms started OK
+rlx snd internal codec init
+soc-audio soc-audio.0.auto: ASoC: machine RLX_INTERN_CARD should use snd_soc_register_card()
+soc-audio soc-audio.0.auto:  rlx-codec-digital <-> pcm-platform mapping ok
+soc-audio soc-audio.0.auto:  rlx-codec-analog <-> pcm-platform mapping ok
+init wifi ...
+insmod /usr/lib/modules/8821cu.ko
+usbcore: registered new interface driver rtl8821cu
+delay 2 sec to wait wifi module
+mount_root: mounting /dev/root
+rtscam:isp resvd mem addr : 0x006c4000, size : 0x1600000
+rtscam:rtscam_mem_init v:0xa06c4000 p:0x006c4000 s:0x00001600
+rtscam:rtscam_lock_init
+rtscam:rtscam_soc_probe
+rtscam:rtscam_hx280_probe
+rtscam:hx280enc:HW at base <0x18060000> with ID <0x48317011>
+rtscam:rtscam_jpgenc_probe
+rtscam:rtscam_osd2_probe
+rtscam:rtstream_init
+init bluetooth ...
+rtk_btusb: Realtek Bluetooth USB driver ver 3.1.0fcdcfd.20191024-194102
+rtk_btcoex: rtk_btcoex_init: version: 1.2
+rtk_btcoex: create workqueue
+rtk_btcoex: alloc buffers 1408, 2240 for ev and l2
+rtk_btusb: btusb_probe intf->cur_altsetting->desc.bInterfaceNumber 0
+rtk_btusb: btusb_probe can_wakeup 1, may wakeup 0
+rtk_btusb: patch_add
+rtk_btusb: auto suspend is disabled
+rtk_btusb: pid = 0xc820
+rtk_btusb: patch_add: Reset gEVersion to 0xff
+rtk_btusb: set_bit(HCI_QUIRK_RESET_ON_CLOSE, &hdev->quirks);
+rtk_btusb: btusb_probe: done
+rtk_btusb: btusb_open start
+rtk_btusb: btusb_open hdev->promisc ==0
+rtk_btusb: download_patch start
+rtk_btusb: chip type value: 0x72
+rtk_btusb: HCI reset.
+rtk_btusb: read_ver_rsp->lmp_subver = 0x8821
+rtk_btusb: read_ver_rsp->hci_rev = 0xc
+rtk_btusb: patch_entry->lmp_sub = 0x8821
+rtk_btusb: load_firmware start
+rtk_btusb: lmp_version = 0x8821
+rtk_btusb: config filename rtl8821cu_config
+rtk_btusb: no bdaddr file /opt/bdaddr
+rtk_btusb: config offset 00d9,length 01
+rtk_btusb: config offset 00e4,length 01
+rtk_btusb: 55 ab 23 87 08 00 d9 00 01 0f e4 00 01 08
+rtk_btusb: Config file length 14, new length 14
+rtk_btusb: fw name is  rtl8821cu_fw
+rtk_btusb: This is not 8723a, use new patch style!
+rtk_btusb: rtk_get_eversion: gEVersion 255
+usbcore: registered new interface driver rtk_btusb
+rtk_btusb: eversion->status = 0x0, eversion->version = 0x1
+rtk_btusb: load_firmware: New gEVersion 1
+rtk_btusb: rtk_get_fw_project_id: opcode 0, len 1, data 10
+rtk_btusb: lmp_version is 8821, project_id is 8821, match!
+rtk_btusb: fw_version = 0x828a930d
+rtk_btusb: number_of_total_patch = 2
+rtk_btusb: chipID 2
+rtk_btusb: patch_length 0x67c8
+rtk_btusb: start_offset 0x00004cc0
+rtk_btusb: Svn version:    22037
+rtk_btusb: Coexistence: BTCOEX_20190509-4139
+rtk_btusb: buf_len = 0x67d6
+rtk_btusb: fw: exists, config file: exists
+rtk_btusb: load_firmware done
+rtk_btusb: download_data start
+killall: entropy: no process killed
+rtk_btusb: download_data done
+rtk_btusb: HCI reset.
+rtk_btusb: read_ver_rsp->lmp_subver = 0x930d
+rtk_btusb: read_ver_rsp->hci_rev = 0x828a
+rtk_btusb: patch_entry->lmp_sub = 0x8821
+rtk_btusb: Rtk patch end 0
+rtk_btusb: btusb_open set HCI_RUNNING
+rtk_btcoex: Open BTCOEX
+rtk_btusb: btusb_open end
+rtk_btcoex: BTCOEX hci_rev 0x828a
+rtk_btcoex: BTCOEX lmp_subver 0x930d
+rtk_btusb: btusb_notify: hci0 evt 3
+====
+DID:       CRAC-012312-VJKFM
+ModelName: DC-X9XL
+MacAddr:   8c:11:cb:42:d5:24
+====
+Customer:
+Timezone:  +01:00, 60
+date mode: 1
+RF Freq:   1912
+Region:    en
+Locale:    1
+Env:       0
+====
+alias:     DC-X9
+chip:      RTS3903N
+isp:       SC2335
+wifi:      8821cu
+bt:        8821cbt
+aec:
+fisheye:
+mcu:
+====
+BUILD_DATE:     Wed May 30 10:13:35 CST 2018
+SCRIPT_VERSION: 2022070901
+CONFIG_VERSION: 0.9.1.0
+cms::ConfigFile | config_file_save | 1, /mnt/mtd/config.xml
+xml_file_save | save /mnt/mtd/config.xml
+Thu Aug 25 06:26:26 UTC 2022
+cms::ConfigFile | config_file_save | 1, /mnt/mtd/gpio.xml
+xml_file_save | save /mnt/mtd/gpio.xml
+gpio6:eds_state => in:0
+gpio11:ring_led => out:0
+gpio18:pir_sens => out:0
+rtk_btusb: btusb_flush add delay
+rtk_btusb: btusb_close
+rtk_btcoex: Close BTCOEX
+rtk_btcoex: -x
+gpio20:pir => in:0
+gpio21:ir_led => out:0
+gpio22:speaker_op => out:1
+cms::ConfigFile | config_file_save | 1, /mnt/mtd/gpio.xml
+xml_file_save | save /mnt/mtd/gpio.xml
+init kdp host lib log....
+adding devices....
+start kdp host lib....
+ota files not ready
+starting report sys status ...
+report sys status succeeded...
+SCPU firmware_id 01030009 build_id 00000004
+NCPU firmware_id 01030009 build_id 00000004
+de init kdp host lib....
+usb 1-1.4: reset high-speed USB device number 4 using ehci-platform
+no format_sd flag
+
+load isp fw from /usr/share/isp_fw/SC2335.bin
+
+rtscam:begin to load fw from isp.fw
+rtscam:Load firmware size : 131024.
+rtscam:Found ISP 1.011 device
+rtscam:video device <rts3903-isp> registered
+rtscam:rts3903-isp initialized
+init_bluez
+Aug 25 06:26:29 crond[1177]: crond: crond (busybox 1.20.2) started, log level 8
+cms::ConfigFile | config_file_save | 1, /mnt/mtd/config.xml
+xml_file_save | save /mnt/mtd/config.xml
+numid=1,iface=MIXER,name='Master Playback Volume'
+  ; type=INTEGER,access=rw---R--,values=2,min=0,max=127,step=0
+  : values=127,127
+  | dBscale-min=-63.50dB,step=0.50dB,mute=0
+numid=8,iface=MIXER,name='Master Capture Volume'
+  ; type=INTEGER,access=rw---R--,values=2,min=0,max=127,step=0
+  : values=127,127
+  | dBscale-min=-33.50dB,step=0.50dB,mute=0
+numid=11,iface=MIXER,name='Real Amic Capture Volume'
+  ; type=INTEGER,access=rw---R--,values=2,min=0,max=69,step=0
+  : values=16,16
+  | dBscale-min=-6.00dB,step=0.75dB,mute=0
+numid=14,iface=MIXER,name='Audio Mono/Stereo In/Out Mode'
+  ; type=ENUMERATED,access=rw------,values=1,items=9
+  ; Item #0 'normal stereo out'
+  ; Item #1 'L/R exchange R/L out'
+  ; Item #2 'monStarted watchdog timer
+o out(single channel)'
+  ; Item #3 'mono out(channel copy stereo)'
+  ; Item #4 'normal stereo in'
+  ; Item #5 'L/R exchange R/L in'
+  ; Item #6 'mono in(select left channel)'
+  ; Item #7 'mono in(select right channel)'
+  ; Item #8 'mono in(half of left and right)'
+  : values=1357
+numid=14,iface=MIXER,name='Audio Mono/Stereo In/Out Mode'
+  ; type=ENUMERATED,access=rw------,values=1,items=9
+  ; Item #0 'normal stereo out'
+  ; Item #1 'L/R exchange R/L out'
+  ; Item #2 'mono out(single channel)'
+  ; Item #3 'mono out(channel copy stereo)'
+  ; Item #4 'normal stereo in'
+  ; Item #5 'L/R exchange R/L in'
+  ; Item #6 'mono in(select left channel)'
+  ; Item #7 'mono in(select right channel)'
+  ; Item #8 'mono in(half of left and right)'
+  : values=1357
+hardware light sensor
+Current watchdog interval is 8
+Last boot is caused by : Power-On-Reset
+sys | touch /tmp/hw_watchdog | ret=0
+startup ipcam watchdog
+startup wifi watchdog
+startup wifi checker
+     _ ______        ______   _    ____
+    | / ___\ \      / /  _ \ / \  / ___|
+ _  | \___ \\ \ /\ / /| |_) / _ \| |
+| |_| |___) |\ V  V / |  __/ ___ \ |___
+ \___/|____/  \_/\_/  |_| /_/   \_\____|
+
+run jsw autoscript ...
+Start Wi-Fi watchdog @ 3600 sec
+export device ID for RF868
+wifi_module: 8821cu
+factory_mode: 0
+ethernet_enable: 1
+wifi_sta_enable: 1
+wifi_ap_enable: 1
+set eth0 MAC Address: 8c:11:cb:42:d5:24
+set default static eth0 ip: 169.254.1.99
+wait eth0 link up ... 0
+wait eth0 link up ... 1
+wait eth0 link up ... 2
+rtl8168: eth0: link up
+start_addr=(0x8000), end_addr=(0x10000), buffer_size=(0x8000), smp_number_max=(4096)
+eth0 link up. remove soft_AP
+softAP_mode: 0
+eth0_link: 1
+make_sn
+sn already make ~~~~~~
+select_network
+udhcpc (v1.20.2) started
+Sending discover...
+Failed to connect to wpa_supplicant - wpa_ctrl_open: No such file or directory
+ioctl[SIOCSIWAP]: Operation not permitted
+udhcpc (v1.20.2) started
+Sending discover...
+Selected interface 'wlan0'
+FAIL
+wpa_supplicant is running..........
+iwlist wlan0 scan
+Sending discover...
+Sending discover...
+cms::ConfigFile | config_file_save | 1, /var/tmp/wifi.info.tmp
+xml_file_save | save /var/tmp/wifi.info.tmp
+Network: LAN mode
+run search reader
+try_burnin_test_sh
+WFPD_LIC
+telnetd
+ulimit
+ipcam_main_start
+IPCAM_MAIN: /usr/bin/ipcam_main
+Sending discover...
+Sending discover...
+main | MAX_USER=3, MAX_ACTIVE_USER=3
+sys | echo 1499 > /var/run/ipcam_main.pid | ret=0
+sys | ring_led_cli p2p_not_login on | ret=0
+sys | ring_led_cli p2p off | ret=0
+main | check_Lan_connect()=1
+sdcard | update_flags:29 | ffffffff -> 30
+main | DID: [CRAC-012312-VJKFM]
+main | Model name: [DC-X9XL]
+main | Model alias: [DC-X9]
+main | API Version = 2.0.0.0
+main | F/WVersion = 4.4.0.7
+main | region=0
+main | rtsp_enable=0
+main | $$$$  ERA_CUSTOMER_VER ORI = 0, GET = 0
+sys | echo 0 > /tmp/RVDP_switch_type | ret=0
+sys | echo 1 > /tmp/RVDP_switch_enable | ret=0
+main | sensitivity_day=10
+main | motion_sensitivity_settings.night_mode=10
+main | motion_mask_day=[0x0fffffff]
+main | motion_mask_night=[0x0fffffff]
+main | Load RVDP param
+main | ======sensor#0(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#1(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#2(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#3(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#4(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#5(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#6(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#7(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#8(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#9(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#10(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#11(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#12(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#13(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#14(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#15(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#16(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#17(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#18(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#19(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#20(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#21(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#22(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | ======sensor#23(null)=======
+main | enable=0 tpye0   alarm=0 sensor_ID=0     nodeid=0        misc=0  position=0
+main | MCU sersion=[]
+main | Not WK Device
+No lease, forking to background
+No lease, forking to background
+http | url=[http://geoip.ubuntu.com/lookup]
+audio_server | PLAYBACK: 8001 16000 1 16
+audio_server | CAPTURE: 8001 16000 1 16
+audio_server | AEC: 8001 16000 1 16
+audio_server | CAPTURE_16to8k: 8001 8000 1 16
+audio_server | PLAYBACK_8to16k: 8001 16000 1 16
+audio_server | CHN_OPUS_RE: 8001 16000 1 16
+audio_server | AAC: 8007 16000 1 16
+audio_server | OPUS: 8001 16000 1 16
+audio_server | MIXER: 8001 16000 1 16
+16000 AECNS is created sucessfully
+yolo | th=0, score=35
+yolo | th=1, score=38
+yolo | th=2, score=42
+yolo | th=3, score=45
+yolo | th=4, score=49
+yolo | th=5, score=53
+yolo | th=6, score=56
+yolo | th=7, score=60
+yolo | th=8, score=63
+yolo | th=9, score=70
+yolo | update_roi_bmp | roi[0]: 6,3,633,356
+yolo | update_roi_bmp | roi[1]: 0,0,0,0
+yolo | update_roi_bmp | roi[2]: 0,0,0,0
+sys | echo 'OK' > /tmp/HAVE_KNERON_KL520 | ret=0
+CLOUD | load cloud drive config
+CLOUD | sn_read CRAC-012312-VJKFM 4TABa/r+/gpQzt1O5ty5SqIAflDDGKpk5+yPTOf7x18=
+CLOUD | sn_read...OK [2145916799 20371231235959]
+stream | avframe_allocator disabled
+driver_8136 | audio_start
+yolov5 | starting report sys status ...
+yolov5 | report sys status succeeded...
+yolov5 | SCPU firmware_id 01030009 build_id 00000004
+yolov5 | NCPU firmware_id 01030009 build_id 00000004
+driver_8136 | video_start
+ipcam_video | stream[0] isp=0
+VD | service_volume_detect_init | threshold=60
+ main | AS PIR Setting Start Time = 35606, Value = 76800
+ipcam_video | stream[0] rts_av_set_profile(1920x1080x15)=0
+ipcam_video | stream[2] isp=2
+ipcam_video | stream[2] rts_av_set_profile(640x360x15)=0
+ipcam_video | stream_create_h264 | h264_attr.gop=15
+ipcam_video | stream_create_h264 | set bitrate_mode=C_VBR
+ipcam_video | h264_ctrl[0]:
+ipcam_video |   qp=26
+ipcam_video |   min_qp=26
+ipcam_video |   max_qp=50
+ipcam_video |   intra_qp_delta=0
+ipcam_video |   min_bitrate=1048576
+ipcam_video |   max_bitrate=2097152
+ipcam_video | stream_create_h264 | h264_attr.gop=15
+ipcam_video | stream_create_h264 | set bitrate_mode=C_VBR
+ipcam_video | h264_ctrl[2]:
+ipcam_video |   qp=26
+ipcam_video |   min_qp=26
+ipcam_video |   max_qp=50
+ipcam_video |   intra_qp_delta=0
+ipcam_video |   min_bitrate=131072
+ipcam_video |   max_bitrate=524288
+ipcam_video | 0 osd attr->number=6
+ipcam_video | 2 osd attr->number=6
+ipcam_video | meta.w=19
+ipcam_video | meta.h=38
+ipcam_video | meta.size=92416
+ipcam_video | meta.w=7
+ipcam_video | meta.h=14
+ipcam_video | meta.size=12544
+ldc min = 0, max = 1, step = 1, default = 0, cur = 0
+ldc min = 0, max = 1, step = 1, default = 0, cur = 1
+sys | /usr/bin/example_isp_ctrl --ldc 1 | ret=0
+main | AS PIR Setting Stop Time = 35804, Value = 76800
+dehaze min = 0, max = 1, step = 1, default = 0, cur = 0
+dehaze min = 0, max = 1, step = 1, default = 0, cur = 1
+sys | /usr/bin/example_isp_ctrl --dehaze 1 | ret=0
+3dnr min = 0, max = 1, step = 1, default = 0, cur = 0
+3dnr min = 0, max = 1, step = 1, default = 0, cur = 1
+sys | /usr/bin/example_isp_ctrl --3dnr 1 | ret=0
+smart_ir_mode min = 0, max = 4, step = 1, default = 0, cur = 2
+smart_ir_mode min = 0, max = 4, step = 1, default = 0, cur = 1
+sys | /usr/bin/example_isp_ctrl --smart_ir_mode 1 | ret=0
+wdr level min = 0, max = 100, step = 1, default = 0, cur = 0
+wdr level min = 0, max = 100, step = 1, default = 0, cur = 100
+sys | /usr/bin/example_isp_ctrl --wdr_level 100 | ret=0
+wdr mode min = 0, max = 2, step = 1, default = 0, cur = 0
+wdr mode min = 0, max = 2, step = 1, default = 0, cur = 2
+sys | /usr/bin/example_isp_ctrl --wdr_mode 2 | ret=0
+rtscam:get regulator io fail
+rtscam:get io power fail
+rtscam:get regulator analog fail
+rtscam:get analog power fail
+rtscam:get regulator core fail
+rtscam:get core power fail
+ipcam_video | osd_set_device_name(IPCAM)
+sdcard | file system block size      : 16384
+sdcard | fragment size               : 16384
+sdcard | size of fs in f_frsize units: 1909083
+sdcard | free blocks                 : 1909080
+sdcard | free blocks for non-root    : 1909080
+sdcard | inodes                      : 0
+sdcard | free inodes                 : 0
+sdcard | free inodes for non-root    : 0
+sdcard | file system ID              : 45825
+sdcard | mount flags                 : 4096
+sdcard | maximum filename length     : 1530
+sdcard | size_mb                     : 29824
+sdcard | free_mb                     : 29824
+sdcard | percent                     : 0
+sdcard | update_flags:29 | 30 -> 0
+sdcard | update_flags:29 | 0 -> 0
+sys | mkdir -p /mnt/sd/mp4/; rm -f /mnt/sd/mp4/*.tmp;sync | ret=0
+event_store | event_store_count=0
+main | device RF ID: [cfe73018]
+main | PPPP_API Version: 2.0.3.0
+http | http_init
+light_ctrl | access pwm3 files err
+main | PPPP_Initialize(US)=0
+main | PPPP_Initialize.... ok(0)
+main | get_port_offset | eth0 ip addr: 0.0.0.0
+main | get_port_offset | 10000
+server 0: 23.21.195.143
+server 1: 122.248.232.207
+server 2: 176.34.104.236
+ipcam_video | enable h264 chn
+ipcam_video | stream 0 enabled
+ipcam_video | stream 2 enabled
+[3]sps_pps: 00 00 00 01 27 64 00 29 AC 1A D0 0F 00 44 FC B3 70 10 10 14 00 00 03 00 04 00 00 03 00 7A 3C 50 8A 80 00 00 00 01 28 EE 32 48 90 43 |
+main | -------------- NetInfo: -------------------
+main | Internet Reachable     : NO
+main | P2P Server IP resolved : YES
+main | P2P Server Hello Ack   : NO
+main | Local NAT Type         :main |  Unknow
+main | My Wan IP : 0.0.0.0
+main | My Lan IP : 0.0.0.0
+thread_watch | creating IOCtrl service 0
+thread_watch | creating GPIO service 1
+thread_watch | creating Siren Arm service 2
+main | re_poll_add(STDIN_FILENO:0)
+main | gpio_thread: Thread 1 starting...
+main | ThreadRecvIOCtrl: Thread 0 starting...
+aac_frame_proc | get_AAC
+pcm_frame_proc | get_PCM

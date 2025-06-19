@@ -1,0 +1,45 @@
+U-Boot 2010.06 (Oct 27 2021 - 14:17:42)
+
+DRAM:  64 MiB
+SPI:   ready
+
+=> setenv P m25p80:16384k@0(global),384k@0(boot)
+=> setenv P ${P},256k@384k(hconf),3072k@640k(kernel)
+=> setenv P ${P},11264k@3712k(rootfs)
+=> setenv bootargs console=ttyS1,57600 root=/dev/mtdblock4 rw init=/bin/sh rts_hconf.hconf_mtd_idx=2 rts-quadspi.channels=dual mtdparts=${P}
+=> sf probe 0
+SF: Detected w25q128 with page size 256 Bytes, erase size 4 KiB, total 16 MiB
+=> sf read 0x80100000 0xA0000 0x300000
+SPI flash read: 3145728 bytes
+=> bootm 0x80100000
+## Booting kernel from Legacy Image at 80100000 ...
+   Image Name:   Linux-3.10.14
+   Image Type:   ARM Linux Kernel Image (uncompressed)
+   Data Size:    2866424 Bytes = 2.7 MiB
+   Load Address: 80008000
+   Entry Point:  80008000
+   Verifying Checksum ... OK
+   Loading Kernel Image ... OK
+
+Starting kernel ...
+
+[    0.000000] Booting Linux on physical CPU 0x0
+[    0.000000] Linux version 3.10.14 (user@host) (gcc version 4.9.2 (OpenWrt GCC 4.9.2 unknown) ) #1 Thu Oct 28 10:12:03 UTC 2021
+[    0.000000] CPU: ARM926EJ-S [41069265] revision 5 (ARMv5TEJ), cr=00053177
+[    0.000000] Built 1 zonelists in Zone order, mobility grouping on.  Total pages: 16256
+[    0.000000] Kernel command line: console=ttyS1,57600 root=/dev/mtdblock4 rw init=/bin/sh rts_hconf.hconf_mtd_idx=2 rts-quadspi.channels=dual mtdparts=m25p80:16384k@0(global),384k@0(boot),256k@384k(hconf),3072k@640k(kernel),11264k@3712k(rootfs)
+[    0.000000] PID hash table entries: 256 (order: -2, 1024 bytes)
+[    0.000000] Dentry cache hash table entries: 8192 (order: 3, 32768 bytes)
+[    0.000000] Inode-cache hash table entries: 4096 (order: 2, 16384 bytes)
+[    0.000000] Memory policy: Data cache writeback
+[    0.000000] Memory: 56812K/65536K available (2647K kernel code, 199K rwdata, 1088K rodata, 120K init, 143K bss, 8724K reserved)
+[    0.000000] NR_IRQS:16 nr_irqs:16 16
+[    0.000000] clocksource: timer: mask: 0xffffffff max_cycles: 0xffffffff, max_idle_ns: 79635851962 ns
+[    0.000000] sched_clock: 32 bits at 100 Hz, resolution 10000000ns, wraps every 21474836480000000ns
+[    0.003000] Calibrating delay loop... 218.72 BogoMIPS (lpj=1093632)
+[    0.060000] pid_max: default: 32768 minimum: 301
+[    0.062000] Mount-cache hash table entries: 512
+[    0.066000] Mountpoint-cache hash table entries: 512
+[    0.380000] VFS: Mounted root (squashfs filesystem) readonly on device 31:4.
+[    0.390000] Freeing unused kernel memory: 120K
+[    0.394000] This architecture does not have kernel memory protection.
